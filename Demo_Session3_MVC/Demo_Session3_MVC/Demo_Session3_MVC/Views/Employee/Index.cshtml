@@ -1,0 +1,30 @@
+﻿@model Demo_Session3_MVC.Models.Employee
+<h3>Register</h3>
+<form method="post" asp-controller="employee" asp-action="save">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" asp-for="Username" />
+            </td>
+            <td>
+                <span asp-validation-for="Username"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" asp-for="Password" />
+            </td>
+            <td>
+                <span asp-validation-for="Password"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Save" />
+            </td>
+        </tr>
+    </table>
+</form>

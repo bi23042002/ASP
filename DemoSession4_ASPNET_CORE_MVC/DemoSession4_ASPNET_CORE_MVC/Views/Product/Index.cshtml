@@ -1,0 +1,78 @@
+﻿<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+	$( function() {
+		$( "#startDate" ).datepicker({
+			dateFormat: 'dd/mm/yy'
+		});
+		$( "#endDate" ).datepicker({
+			dateFormat: 'dd/mm/yy'
+		});
+	} );
+</script>
+
+<fieldset>
+	<legend>Search by keyword</legend>
+	<form method="get" asp-controller="product" asp-action="searchByKeyword">
+		Keyword: <input type="text" name="keyword" value="@ViewBag.keyword" />
+		<br />
+		<input type="submit" value="Search" />
+	</form>
+</fieldset>
+<fieldset>
+	<legend>Search by price</legend>
+	<form method="get" asp-controller="product" asp-action="searchByPrice">
+		Min: <input type="text" name="min" min="0" />
+		<br />
+		Max: <input type="text" name="max" max="0" />
+		<br />
+		<input type="submit" value="Search" />
+	</form>
+</fieldset>
+<fieldset>
+	<legend>Search By Dates</legend>
+	<form method="get" asp-controller="product" asp-action="searchByDates">
+		Start: <input type="text" name="startDate" id="startDate" />
+		<br />
+		End: <input type="text" name="endDate" id="endDate" />
+		<br />
+		<input type="submit" value="Search" />
+	</form>
+</fieldset>
+<h3>Danh sach khach hang</h3>
+
+<table border="1">
+	<tr>
+		<th>Customer Id</th>
+		<th>Name</th>
+		<th>Birthday</th>
+		<th>Phone</th>
+		<th>adress</th>
+		<th>Status</th>
+		<th>Photo</th>
+		<th>Created</th>
+		<th>Options</th>
+	</tr>
+	@foreach (var product in @ViewBag.products)
+	{
+		<tr>
+			<td>@product.Id</td>
+			<td>@product.Name</td>
+			<td>@product.Created.ToString("dd-MM-yyyy")</td>
+			<td>@product.Price</td>
+			<td>@product.Quantity</td>
+			<td>@product.Description</td>
+			<td>@product.Status</td>
+			<td>@product.Photo</td>
+			<td>@product.Created.ToString("dd-MM-yyyy")</td>
+			<td>
+				<a asp-controller="product" asp-action="add" asp-route-id="@product.Id">Add New Order</a> |
+				<a asp-controller="product" asp-action="delete" asp-route-id="@product.Id" onclick="return confirm('Are you sure')">Delete</a> |
+				<a asp-controller="product" asp-action="edit" asp-route-id="@product.Id">Change Profile</a>
+
+			</td>
+		</tr>
+	}
+</table>

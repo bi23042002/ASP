@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h3>Category</h3>
+
+</ul>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+     @foreach(var cate in @ViewBag.categories)
+        {
+    <tr>
+       
+            <td>@cate.Id</td>
+            <td>@(cate.Name) - @(cate.Products.Count) </td>
+        
+    </tr>
+   @* @foreach (var product in cate.Products)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+            <td>@product.Quantity</td>
+            <td>@product.Description</td>
+            <td>@product.Status</td>
+            <td>@product.Photo</td>
+            <td>@product.Created.ToString("dd-MM-yyyy")</td>
+            <td>@product.CategoryId</td>
+        </tr>
+    }*@
+    }
+</table>

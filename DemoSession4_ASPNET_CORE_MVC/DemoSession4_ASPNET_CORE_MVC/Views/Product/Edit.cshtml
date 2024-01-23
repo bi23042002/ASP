@@ -1,0 +1,57 @@
+﻿@model DemoSession4_ASPNET_CORE_MVC.Models.Product
+
+
+<h3>Change Profile</h3>
+
+<form method="post" asp-controller="product" asp-action="edit" enctype="multipart/form-data">
+	<table>
+		<tr>
+			<td>Name</td>
+			<td> <input type="text" asp-for="Name" /></td>
+		</tr>
+		<tr>
+			<td>Price</td>
+			<td> <input type="text" asp-for="Price" /></td>
+		</tr>
+		<tr>
+			<td>Phone</td>
+			<td> <input type="text" asp-for="Quantity" /></td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td> <textarea cols="20" rows="5" asp-for="Description"></textarea>  </td>
+		</tr>
+		<tr>
+			<td>Status</td>
+			<td> <input type="checkbox" asp-for="Status" /></td>
+		</tr>
+		<tr>
+			<td>Photo</td>
+			<td> 
+				<input type="file" name="file" />
+				<br />
+				<img src="~/images/@Model.Photo" width="70" height="70" />
+			</td>
+		</tr>
+		<tr>
+			<td>CategoryId</td>
+			<td>
+				<select asp-for="CategoryId">
+					@foreach (var category in @ViewBag.categories)
+					{
+						<option value="@category.Id"> @category.Name</option>
+					}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td> <input type="submit" value="Save" /></td>
+		</tr>
+
+
+	</table>
+	<input type="hidden" asp-for="Id" />
+	<input type="hidden" asp-for="Photo" />
+</form>
+

@@ -1,0 +1,13 @@
+﻿<h3>Demo 1</h3>
+<form method="post" enctype="multipart/form-data" asp-controller="demo3" asp-action="upload1">
+    File <input type="file" name="file" />
+    <br />
+    <input type="submit" value="Upload" />
+</form>
+
+<h3>Demo 2</h3>
+<form method="post" enctype="multipart/form-data" asp-controller="demo3" asp-action="upload2">
+    Files <input type="file" name="files" multiple="multiple" />
+    <br />
+    <input type="submit" value="Upload" />
+</form>

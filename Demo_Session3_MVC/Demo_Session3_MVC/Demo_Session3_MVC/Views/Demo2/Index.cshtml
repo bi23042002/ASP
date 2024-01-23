@@ -1,0 +1,48 @@
+﻿<a asp-controller="account" asp-action="login">Login</a>
+
+<h3>Demo 1</h3>
+<form method="get" asp-controller="demo2" asp-action="search1">
+    Keyword <input type="text" name="keyword" />
+    <br />
+    <input type="submit" value="Search" />
+</form>
+
+<h3>Demo 2</h3>
+<form method="get" asp-controller="demo2" asp-action="search2">
+    Min <input type="text" name="min" />
+    <br />
+    Max <input type="text" name="max" />
+    <br />
+    <input type="submit" value="Search" />
+</form>
+
+<h3>Demo 3</h3>
+<form method="post" asp-controller="demo2" asp-action="login">
+    Username <input type="text" name="username" />
+    <br />
+    Password <input type="password" name="password" />
+    <br />
+    <input type="submit" value="Login" />
+</form>
+
+<h3>Demo 4</h3>
+<form method="post" asp-controller="demo2" asp-action="save1">
+    Email 1 <input type="text" name="emails" />
+    <br />
+    Email 2 <input type="text" name="emails" />
+    <br />
+    Email 3 <input type="text" name="emails" />
+    <br />
+    <input type="submit" value="Save" />
+</form>
+
+<h3>Demo 5</h3>
+<form method="post" asp-controller="demo2" asp-action="save2">
+    Quantity 1 <input type="text" name="quantities" />
+    <br />
+    Quantity 2 <input type="text" name="quantities" />
+    <br />
+    Quantity 3 <input type="text" name="quantities" />
+    <br />
+    <input type="submit" value="Save" />
+</form>

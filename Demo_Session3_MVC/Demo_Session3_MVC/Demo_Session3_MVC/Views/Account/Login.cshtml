@@ -1,0 +1,11 @@
+﻿<h3>Login</h3>
+@ViewBag.msg
+<form method="post" asp-controller="account" asp-action="login" style="/* border-radius: 90px 0px 120px 0px; *//* -webkit-border-radius: 90px 0px 120px 0px; */-moz-border-radius: 90px 0px 120px 0px;border: 6px inset #e18181;/* margin-left: unset; */margin-right: 70%;box-shadow: -10px 11px 20px 1px rgba(255,0,0,0.61);-webkit-box-shadow: -10px 11px 20px 1px rgb(0 0 0 / 61%);-moz-box-shadow: -10px 11px 20px 1px rgba(255,0,0,0.61);">
+    Username <input type="text" name="username" style="margin-left: 15px;" />
+    <br />
+    Password <input type="password" name="password" style="margin-left: 15px;" />
+    <br />
+    <input type="submit" value="Login" />
+    <br />
+    <a asp-controller="account" asp-action="register">Register</a>
+</form>

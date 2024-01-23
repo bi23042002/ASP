@@ -1,0 +1,31 @@
+﻿
+<h3>Product 2</h3>
+<table border="1">
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th>Description</th>
+		<th>Status</th>
+		<th>Photo</th>
+		<th>Created</th>
+		@*<th>Category ID</th>
+		<th>Category Name</th>*@
+	</tr>
+
+	<tr>
+		<td>@ViewBag.product.Id</td>
+		<td>@ViewBag.product.Name</td>
+		<td>@ViewBag.product.Price</td>
+		<td>@ViewBag.product.Quantity</td>
+		<td>@ViewBag.product.Description</td>
+		<td>@ViewBag.product.Status</td>
+		<td>@ViewBag.product.Photo</td>
+		<td>@ViewBag.product.Created.ToString("dd-MM-yyyy")</td>
+		@*<td>@product.Category.Id</td>*@
+		@*<td>@product.Category.Name</td>*@
+	</tr>
+
+</table>
+@ViewBag.msg = @ViewBag.sum

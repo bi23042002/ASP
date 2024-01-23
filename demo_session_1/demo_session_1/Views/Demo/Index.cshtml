@@ -1,0 +1,19 @@
+﻿<link href="~/css/style.css" rel="stylesheet">
+<h3>@ViewBag.id</h3>
+@if (@ViewBag.status){
+    <span style="color:red">show</span>
+}
+else  
+{
+    <span style="color:blue">hide</span>
+}
+<ul>
+    @foreach (string name in @ViewBag.name)
+    {
+        <li>@name</li>
+    }
+</ul>
+
+<img src="~/image/download.jfif" onclick="listme()" class="border-image" width="@ViewBag.width" height="@ViewBag.height" />
+
+<script src="~/js/index.js"></script>
